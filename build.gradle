@@ -35,11 +35,13 @@ allure {
 defaultTasks 'clean', 'test'
 
 dependencies {
-    testCompile "org.junit.jupiter:junit-jupiter:$jUnitVersion"
-    testCompile "com.codeborne:selenide:$selenideVersion"
-    testCompile "org.testcontainers:selenium:$containersVersion"
-    testCompile "org.testcontainers:junit-jupiter:$containersVersion"
-    testCompile "org.testcontainers:testcontainers:$containersVersion"
+    testCompile {
+        "org.junit.jupiter:junit-jupiter:$jUnitVersion"
+        "com.codeborne:selenide:$selenideVersion"
+        "org.testcontainers:selenium:$containersVersion"
+        "org.testcontainers:junit-jupiter:$containersVersion"
+        "org.testcontainers:testcontainers:$containersVersion"
+    }
     testCompile ("io.qameta.allure:allure-selenide:$allureVersion") {
         exclude group: 'junit', module: 'junit'
     }
